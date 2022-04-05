@@ -6,13 +6,15 @@ export const HomePage = () => {
   return (
     <div className='page-body'>
       <div className='container'>
-        {exerciseData.map((exercise, idx) => {
-          return (
-            <Link to={`/exercise/${idx}`}>
-              <div>Exercise {idx + 1}</div>
-            </Link>
-          )
-        })}
+        <div className='exerecises-wrapper'>
+          {exerciseData.map((exercise, idx) => {
+            return (
+              <Link to={`/exercise/${idx}`} className='exerecise-card' key={`exercise-${idx}`}>
+                <div className=''>Exercise {idx + 1}</div>
+              </Link>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

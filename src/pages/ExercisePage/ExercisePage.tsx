@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { exerciseData } from 'data/exercises.js'
 import { useParams } from 'react-router-dom'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 
 interface ISentence {
   rus: string
@@ -11,9 +11,15 @@ interface ISentence {
 
 export const ExercisePage = () => {
   let params = useParams()
+  const navigate = useNavigate()
 
   const [exercises, setExercises] = useState(exerciseData)
 
+  useEffect(() => {
+    if (!params.exerciseId) {
+      navigate('/')
+    }
+  }, [params])
   const handlerShowRus = ({ exerciseIdx, idx }: { exerciseIdx: any; idx: any }) => {
     return () => {
       const newState = JSON.parse(JSON.stringify(exercises))
@@ -26,7 +32,9 @@ export const ExercisePage = () => {
       setExercises(newState)
     }
   }
-  if (!params.exerciseId) return <></>
+  if (!params.exerciseId) {
+    return <></>
+  }
   const exerciseId = params.exerciseId
   return (
     <main className='main'>
