@@ -1,65 +1,27 @@
 import React, { useRef, useState } from 'react'
 import logo from './logo.svg'
-import { exerciseData } from './data/exercises.js'
-import './App.css'
-import produce from 'immer'
+import { exerciseData } from 'data/exercises.js'
+import Header from 'layout/Header'
+import Footer from 'layout/Footer'
 
-interface ISentence {
-  rus: string
-  eng: string
-  showEng?: boolean
-}
+import { Routes, Route, Link } from 'react-router-dom'
+import ExercisePage from 'pages/ExercisePage'
+import HomePage from 'pages/HomePage'
+import produce from 'immer'
+import './App.css'
 
 function App() {
-  const [exercises, setExercises] = useState(exerciseData)
-
-  const handlerShowRus = ({ exerciseIdx, idx }: { exerciseIdx: number; idx: number }) => {
-    return () => {
-      const newState = JSON.parse(JSON.stringify(exercises))
-      let sentence = newState[exerciseIdx][idx]
-      if (sentence.showEng) {
-        sentence.showEng = false
-      } else {
-        sentence.showEng = true
-      }
-      setExercises(newState)
-    }
-  }
-
   return (
-    <div className=''>
-      <header className='header'></header>
-      <main className=''>
-        <div className='page-wrapper'>
-          <div className='container'>
-            {exercises.map((exersice, exerciseIdx) => {
-              return (
-                <div key={`exericise-${exerciseIdx}`} className='exercise-wrapper'>
-                  <div className='exercise-title'>Exercise {exerciseIdx + 1}.</div>
-                  <div>
-                    {exersice.map((el: ISentence, idx) => {
-                      return (
-                        <div key={`s-${idx}`} className='sentence-wrapper'>
-                          <div onClick={handlerShowRus({ exerciseIdx, idx })} className='sentence-item'>
-                            {idx + 1}. {el['rus']}
-                          </div>
+    <div className='page-wrapper'>
+      <Header />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='exercise' element={<ExercisePage />}>
+          <Route path=':exerciseId' element={<ExercisePage />} />
+        </Route>
+      </Routes>
 
-                          {el.showEng && (
-                            <div className='sentence-item eng'>
-                              {/* {idx + 1}.  */}
-                              {el['eng']}
-                            </div>
-                          )}
-                        </div>
-                      )
-                    })}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </main>
+      <Footer />
     </div>
   )
 }

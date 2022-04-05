@@ -1,26 +1,20 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import { StrictMode } from 'react'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import './index.css'
 
-const rootElement = document.getElementById('root') as HTMLDivElement
-
-// @ts-ignore: Unreachable code error
-ReactDOM.createRoot(rootElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const container = document.getElementById('root')
+const root = createRoot(container as HTMLElement)
+const app = (
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>
 )
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+root.render(app)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals()
