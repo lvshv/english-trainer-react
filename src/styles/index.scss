@@ -1,3 +1,5 @@
+@import url(./normalize.css);
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
@@ -69,6 +71,7 @@ code {
 
 .page-body {
   margin-top: 200px;
+  padding: 20px 0;
 }
 
 .footer {
@@ -99,4 +102,25 @@ code {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(3, auto);
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+.button {
+  background-color: #febe46;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
 }

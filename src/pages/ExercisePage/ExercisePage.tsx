@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { exerciseData } from 'data/exercises.js'
 import { useParams } from 'react-router-dom'
 import { Routes, Route, Link, useNavigate } from 'react-router-dom'
-
+import Button from 'components/Button'
 interface ISentence {
   rus: string
   eng: string
@@ -14,12 +14,21 @@ export const ExercisePage = () => {
   const navigate = useNavigate()
 
   const [exercises, setExercises] = useState(exerciseData)
+  const [translateMode, setTranslateMode] = useState(false)
+  const [inputValue, setInputValue] = useState('')
 
   useEffect(() => {
     if (!params.exerciseId) {
       navigate('/')
     }
   }, [params])
+
+  if (!params.exerciseId) {
+    return <></>
+  }
+
+  const exerciseId = params.exerciseId
+
   const handlerShowRus = ({ exerciseIdx, idx }: { exerciseIdx: any; idx: any }) => {
     return () => {
       const newState = JSON.parse(JSON.stringify(exercises))
@@ -32,10 +41,18 @@ export const ExercisePage = () => {
       setExercises(newState)
     }
   }
-  if (!params.exerciseId) {
-    return <></>
+
+  const startTranslate = () => {
+    setTranslateMode(true)
   }
-  const exerciseId = params.exerciseId
+  const checkTranslation = () => {
+    const original = exercises[+exerciseId][0].eng.split(' ')
+    console.log('🚀 ~ checkTranslation ~ original', original)
+  }
+
+  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInputValue(e.target.value)
+  }
   return (
     <main className='main'>
       <div className='page-body'>
@@ -65,9 +82,22 @@ export const ExercisePage = () => {
                 )
               })}
             </div>
+            {!translateMode && (
+              <Button className='button' onClick={startTranslate}>
+                начать перевод
+              </Button>
+            )}
           </div>
-          {/* )
-          })} */}
+          {translateMode && (
+            <div>
+              <span></span>
+              <div>{exercises[+exerciseId][0].rus}</div>
+              <textarea className='textarea' value={inputValue} onChange={onChange}></textarea>
+              <Button className='button' onClick={checkTranslation}>
+                отправить овтет
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </main>
