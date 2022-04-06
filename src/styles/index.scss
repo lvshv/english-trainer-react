@@ -1,11 +1,56 @@
 @import url(./normalize.css);
+@import url(./fonts/fonts.css);
+
+$primary: #5b8388;
+$primaryHovered: #395d62;
+$accent: #e78346;
+$accentHovered: #d26522;
+$black: #383636;
+$khaki: #54544d;
+$darkGray: #b4b4b4;
+$olive: #eceae3;
+$oliveGray: #e9e8e5;
+$gray: #adadab;
+$lightGray: #b1b1ae;
+$darkGray: #6a6a6a;
+$grayBg: #f8f8f7;
+$lightGrayBg: #f0f0ee;
+$white: #ffffff;
+$whiteSec: rgba(255, 255, 255, 0.67);
+$text: rgba($black, 0.67);
+
+$blue: #698689;
+$brown: #9f6946;
+$sand: #af8d66;
+$blueBlack: #3f4647;
+$ashen: #938c80;
+$oliveDark: #8b8b6e;
+$red: #f97c7c;
+
+$defaultFont: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+  Droid Sans, Helvetica Neue, sans-serif;
+$secondaryFont: 'Raleway', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+  Droid Sans, Helvetica Neue, sans-serif;
+
+$graySecondary: #b6b6b3;
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: $defaultFont;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: $defaultFont;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  color: $black;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-display: swap;
+  margin: 0;
+  counter-reset: step;
+  overflow-x: hidden;
 }
 * {
   box-sizing: border-box;
