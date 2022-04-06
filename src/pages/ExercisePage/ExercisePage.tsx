@@ -46,8 +46,16 @@ export const ExercisePage = () => {
     setTranslateMode(true)
   }
   const checkTranslation = () => {
-    const original = exercises[+exerciseId][0].eng.split(' ')
-    console.log('🚀 ~ checkTranslation ~ original', original)
+    const original = exercises[+exerciseId][0].eng.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '').split(' ')
+    const input = inputValue.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '').split(' ')
+    for (var i = 0; i < original.length; i++) {
+      const word = original[i]
+      if (input.indexOf(word) >= 0) {
+        // console.log(word + ' is a bad')
+      } else {
+        console.log(word + ' is good!!!')
+      }
+    }
   }
 
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -92,7 +100,12 @@ export const ExercisePage = () => {
             <div>
               <span></span>
               <div>{exercises[+exerciseId][0].rus}</div>
-              <textarea className='textarea' value={inputValue} onChange={onChange}></textarea>
+              <textarea
+                className='textarea'
+                placeholder='Your translation'
+                value={inputValue}
+                onChange={onChange}
+              ></textarea>
               <Button className='button' onClick={checkTranslation}>
                 отправить овтет
               </Button>
