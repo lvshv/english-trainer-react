@@ -30,6 +30,8 @@ function App() {
       window.location.replace('https://instagram.com')
     }
   }, [])
+  const ios =
+    'https://vcru.page.link/?link=https%3A%2F%2Fvc.ru%2Ffinance%2F388706-strana-benzokolonka-i-drugie-rasprostranennye-predubezhdeniya-o-rossiyskoy-ekonomike&apn=ru.artrobot.siliconrus&amv=480&ibi=com.siliconrus.app.Siliconrus&isi=920638420&ius=920638420&efr=1'
   return (
     <div className='page-wrapper'>
       {/* <Header /> */}
@@ -39,12 +41,12 @@ function App() {
           <>
             {/*  <a href='intent://vcru.page.link/?link=https://vc.ru/finance/388706-strana-benzokolonka-i-drugie-rasprostranennye-predubezhdeniya-o-rossiyskoy-ekonomike&apn=ru.artrobot.siliconrus&amv=480&isi=920638420&ibi=com.siliconrus.app.Siliconrus&efr=1#Intent;package=com.google.android.gms;action=com.google.firebase.dynamiclinks.VIEW_DYNAMIC_LINK;scheme=https;S.browser_fallback_url=https://play.google.com/store/apps/details%3Fid%3Dru.artrobot.siliconrus&pcampaignid%3Dfdl_long&url%3Dhttps://vc.ru/finance/388706-strana-benzokolonka-i-drugie-rasprostranennye-predubezhdeniya-o-rossiyskoy-ekonomike&min_version%3D480;end'>
           </a> */}
-            <a href='intent://www.instagram.com/profile/#Intent;package=com.instagram.android;scheme=https;end'>
-              lalala
-            </a>
+            <a href='intent://www.instagram.com/zuck/#Intent;package=com.instagram.android;scheme=https;end'>lalala</a>
           </>
         ) : isIOS ? (
-          <a href='https://apps.apple.com/us/app/instagram/id389801252'>Open iOS app</a>
+          <a href='https://vcru.page.link/?link=https%3A%2F%2Fvc.ru%2Ffinance%2F388706-strana-benzokolonka-i-drugie-rasprostranennye-predubezhdeniya-o-rossiyskoy-ekonomike&apn=ru.artrobot.siliconrus&amv=480&ibi=com.siliconrus.app.Siliconrus&isi=920638420&ius=920638420&efr=1'>
+            Open iOS app
+          </a>
         ) : (
           <a href='https://instagram.com'>Open Web app</a>
         )}
