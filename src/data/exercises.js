@@ -1,7 +1,7 @@
 export const exerciseData = [
   [
     {
-      rus: 'Егo сoветы всегдa бывaют тaкими убедительными (convіncіng). Пoчему ты никoгдa им не следуешь?',
+      rus: 'Его советы всегда бывают такими убедительными (convincing). Пoчему ты никoгдa им не следуешь?',
       eng: 'Hіs advіcе іs always so convіncіng. Why do you nеvеr follow іt?',
     },
     {
@@ -3995,8 +3995,8 @@ export const exerciseData = [
   ],
   [
     {
-      rus: 'Не мoгу же я уйти и oстaвить вaс oдну.',
-      eng: 'І can hardly go away and lеavе you alonе',
+      rus: 'Не могу же я уйти и оставить вас одну.',
+      eng: 'I can hardly go away and leave you alone.',
     },
     {
       rus: 'Чтo сделaнo, тo сделaнo.',
@@ -4917,4 +4917,25 @@ export const exerciseData = [
       eng: 'Lіstеn, somеbody іs walkіng downstaіrs. - І hеar nothіng.',
     },
   ],
+]
+
+export const exercise = [
+  {
+    category: 'The Noun',
+    id: 1,
+    rus: '1. Его советы всегда бывают такими убедительны-ми (convincing). Почему ты никогда им не следуешь? 2. Какая ненастная (nasty) погода! В такую дождли-вую погоду лучше сидеть дома. 3. Она делает хорошие успехи в английском, 4. Я удивлен (be surprised), что она поверила этим странным новостям. Боюсь, они недостоверны. Кто их ей сообщил? 5. Мне кажется, эти весы сломаны. 6. Вчера я положил сюда деньги. Где они? Я не могу их найти. 7. Я считаю, что помещение для нашего магазина вполне подходящее. 8. Мне не нравятся эти джинсы. Мне кажется, та пара джинсов лучше. 9. Экипаж был готов выполнить (fulfil) приказ капитана. 10. Критерии часто меняются, 11. Ваши то-вары сделаны очень плохо. 12. Нику необходимо сшить (sew) новые брюки. У меня есть хорошая синяя мате-рия. 13. Он купил буханку хлеба, пакет молока, кусок мыла и тюбик зубной пасты. 14. Информация о ценах очень интересна. 15. Здесь нет светофора, и перекрес-ток очень опасное место. 16. Виды этих растений (plant) неизвестны. 17. Вдруг позади себя я услышал гром-кий смех, 18. Его знания по математике лучше моих, 19. Ты взял бинокль? -- Нет, он нам не понадобится. Наши места во втором ряду (row). 20. Улики были важными, и он чувствовал, что суд присяжных был против него. 21. В Англии зарплата рабочим выпла-чивается каждую неделю. 22. Актеров встретили ап-лодисментами. 23. Мои часы отстают. 24. Морковь бо-гата витаминами. 25. Она считает, что современная одежда красива и удобна (convenient)',
+    eng: "1. His advice is always so convincing. Why do you never follow it? 2. What nasty weather! It's better to stay at home in such rainy weather. 3. She is making good progress in English. 4.1 am surprised that she (has) believed this strange news. I am afraid, it is nottrue. Who told it to her? 5.1 think these scales are broken.6. Yesterday I put money here. Where is it? I can't find it. 7.1 think that the premises for our shop are quite good. 8.1 don't like these jeans. I think that pair of jeans is better. 9. The crew were ready to fulfil the order of the captain. 10. Criteria are often changing. 11. Your goods are made very badly. 12. It is necessary to sew new trousers for Nick. I have good blue cloth. 13. He bought a loaf of bread, a carton of milk, a bar of soap, and a tube of toothpaste. 14. The information about the prices is very interesting. 15. There are no traffic-lights, and the crossroads is a very dangerous place. 16. The species of these plants are unknown. 17. Suddenly I heard loud laughter (a loud laugh) behind me. 18. His knowledge in maths is better than mine. 19. Have you taken opera glasses? -- No, we needn't them. Our seats arein the second row. 20, The evidence was very important, and he felt that the jury were against him. 21. In England wages are paid every week. 22. The actors were met with applause. 23. My watch is slow. 24. Carrots are rich in vitamins. 25. She thinks that modern clothes are nice and convenient.",
+  },
+  {
+    category: 'Noun Structures',
+    id: 2,
+    rus: ' 1. Президент прибыл в страну с трехдневным ви-зитом (2 варианта). 2. Мне нужно купить туфли. Ты не знаешь, где здесь обувной отдел (department)? 3. Ник-то не знал, что сказать, и наступило минутное молча-ние. 4. Когда утром он спустился в столовую, на столе лежали остатки (remains) вчерашнего ужина. 5. Док-лад главнокомандующего был краток. 6. Мне кажется, что проблема "отцов и детей" -- вечная (eternal) про-блема. 7. Эта дорога закрыта. Ведутся дорожные рабо-ты. 8. "Утечка мозгов" -- острая (acute) проблема раз-вивающихся (developing) стран. 9. Ты считаешь, что в Китае необходимо ввести (implement) регулирование рождаемости? 10. Приезд Поля и Кет был неожидан-ностью (surprise) для тети Эня.11. Самые богатые за-лежи (deposits) нефти находятся в Арабских Эмира-тах. 12. Проблемы, с которыми человечество (mankind) столкнулось (face) в конце двадцатого века, -- это за-грязнение (pollution)no4Bbi, воздуха и воды, а также "парниковый эффект". 13. После двухчасовой прогул-ки все захотели есть (2 варианта). 14, Портрет жены Рембрандта -- одна из самых известных картин ху-дожника. 15, Этому замку триста лет.',
+    eng: "1. The president arrived in the country with a three-day visit (three days' visit). 2.1 wantto buy a pair of shoes. Do you know where the shoe department is here? 3. Nobody knewwhat to say and there was a moment's ( ,silence. 4. When he went down to the dining room in the morning, there were the remains of yesterday's supper on the table. 5. The commander-in-chief's report was brief. 6, It seems to me that the generation gap is an eternal / problem. 7. This road is closed. The roadworks are being conducted. 8. Brain drain is an acute problem of developing countries. 9. Do you think it is necessary to ..implement birth control in China? 10. Paul and Kate's Arrival was a surprise for aunt Ann. 11. The richest oil deposits are in the Arab Emirates. 12. The problems the Mankindfaced at the end of the 20th century are soil, ' water and air pollution, and also greenhouse effect. 13, After two hours' (a two-hour) walk everybody felt - hungry. 14. The portrait ofRembrandt's wife is one of the most famous pictures of the artist. 15. This is a three-hundred-year castle.",
+  },
+  {
+    category: 'Quantifiers',
+    id: 3,
+    rus: '1. Джим вчера попросил меня починить (repair) машину, но у меня было мало времени, и мне пришлось отказать ему. 2. Она очень застенчива (shy). У нее мало подруг. 3. В зале было довольно много людей, так как фильм был интересный, 4. У меня есть несколько книг по этой проблеме. 5, У нас нет сахара. Купи немного по дороге домой. 6. Мало кто понял, что он хочет ска-зать. 7. Я выпил немного кофе и смог работать до полу-ночи. 8. В его переводе было мало ошибок, 9. Они по-дошлик небольшой деревне; в ней было несколько домов. 10. У них оставалось немного времени до нача-ла спектакля, и они решили пойти перекусить (have a bite), 11. Не думаю, что он будет хорошим врачом. У него мало терпения (patience). 12. У нас было мало денег, поэтому мы решили поехать автобусом, 18. Довольно много друзей пришли навестить его. 14. У него не хва-тает несколько долларов, чтобы купить эту картину. 15. Ты можешь взять несколько конфет.',
+    eng: "1. Yesterday Jim asked me to repair his car, but I had little time and I had to refuse him.2. She is very shy. She has few friends. 3. There were quite a few people in the hall, because the film was interesting. 4.1 have a few books on this problem. 5. We have no sugar. Buy a little on your way home. 6. Few people understood what he wanted to say. 7.1 drank a little coffee and was able to work till midnight. 8. There were few mistakes inhis translation, 9. They reached a small village; there were a few houses there. 10. They had a little time before the beginning of the performance, and they decided to have a bite.11.1 don't think he will be a good doctor. He has  little patience. 12. We had little money so we decided to go by bus. 13. Quite a few friends came to visit him. 14. He doesn't have a few dollars to buy the picture. 15. You can take a few sweets.",
+  },
 ]

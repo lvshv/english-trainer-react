@@ -1,33 +1,33 @@
 import React from 'react'
 import cn from 'classnames'
+import styles from './Button.module.scss'
 interface IButtonProps {
-  /* Shows loading spinner */
   loading?: boolean
-  /* Makes button disabled */
+
   disabled?: boolean
-  /* Makes button active */
+
   active?: boolean
-  /* The label to show in the button when loading is true */
+
   loadingText?: string
-  /* Set the original html type of button */
+
   type?: 'button' | 'reset' | 'submit'
-  /* Adds icon before button label */
+
   leftIcon?: React.ReactElement
-  /* Adds icon after button label */
+
   rightIcon?: React.ReactElement
-  /* Set the button color */
+
   color?: string
-  /* Size of the button */
+
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-  /** Controls button appearance */
+
   variant?: 'link' | 'solid' | 'outline' | 'light' | 'ghost'
-  /* React node */
+
   children?: React.ReactNode
 }
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, IButtonProps {}
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref): JSX.Element => {
   const {
     disabled: _disabled,
     loading,
@@ -45,11 +45,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   } = props
 
   const disabled = _disabled || loading
-  // const classes = useButtonClass({
-  //   variant,
-  //   size,
-  //   disabled,
-  // });
 
   return (
     <button
@@ -59,7 +54,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       type={type}
       data-active={active ? 'true' : undefined}
       data-color={color ? color : undefined}
-      className={cn(className)}
+      className={cn(styles.mybutton, className)}
       {...rest}
     >
       {leftIcon && !loading ? leftIcon : null}

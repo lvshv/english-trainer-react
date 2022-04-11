@@ -1,0 +1,14 @@
+.mybutton {
+  background-image: linear-gradient(to right, rgb(255, 0, 184) 0%, rgb(100, 161, 255) 50%, rgb(0, 102, 255) 100%);
+  background-size: 200%;
+  color: rgb(255, 255, 255);
+  border: 0px;
+  transition: all 0.5s ease-in-out 0s;
+  height: 40px;
+  padding-left: 22px;
+  padding-right: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+}
