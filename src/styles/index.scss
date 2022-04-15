@@ -1,38 +1,44 @@
 @import url(./normalize.css);
 @import url(./fonts/fonts.css);
 
-$primary: #5b8388;
-$primaryHovered: #395d62;
-$accent: #e78346;
-$accentHovered: #d26522;
-$black: #383636;
-$khaki: #54544d;
-$darkGray: #b4b4b4;
-$olive: #eceae3;
-$oliveGray: #e9e8e5;
-$gray: #adadab;
-$lightGray: #b1b1ae;
-$darkGray: #6a6a6a;
-$grayBg: #f8f8f7;
-$lightGrayBg: #f0f0ee;
-$white: #ffffff;
-$whiteSec: rgba(255, 255, 255, 0.67);
-$text: rgba($black, 0.67);
-
-$blue: #698689;
-$brown: #9f6946;
-$sand: #af8d66;
-$blueBlack: #3f4647;
-$ashen: #938c80;
-$oliveDark: #8b8b6e;
-$red: #f97c7c;
-
 $defaultFont: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
   Droid Sans, Helvetica Neue, sans-serif;
 $secondaryFont: 'Raleway', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
   Droid Sans, Helvetica Neue, sans-serif;
 
 $graySecondary: #b6b6b3;
+
+html[data-theme='dark'] {
+  --button-text-color: #ffffff;
+  --button-background-color: #4e005c;
+  --button-border-color: #ba8fc2;
+
+  --input-text-color: #ffffff;
+  --input-placeholder-text-color: #dddddd;
+  --input-background-color: #7c7c7c;
+  --input-border-color: #ba8fc2;
+
+  --background-color: #292929;
+  --icon-color: #ba8fc2;
+
+  --text-color: #ffffff;
+}
+
+html[data-theme='light'] {
+  --button-text-color: #252525;
+  --button-background-color: #f9d4ff;
+  --button-border-color: #4e005c;
+
+  --input-text-color: #252525;
+  --input-placeholder-text-color: #a7a7a7;
+  --input-background-color: #ffffff;
+  --input-border-color: #4e005c;
+
+  --background-color: #fff;
+  --icon-color: #4e005c;
+
+  --text-color: #383636;
+}
 
 body {
   margin: 0;
@@ -43,7 +49,8 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
-  color: $black;
+  color: var(--text-color);
+  background-color: var(--background-color);
   position: relative;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
@@ -51,6 +58,7 @@ body {
   margin: 0;
   counter-reset: step;
   overflow-x: hidden;
+  transition: background-color 0.3s;
 }
 * {
   box-sizing: border-box;
@@ -73,10 +81,22 @@ code {
   min-height: 100vh;
 }
 
+// .background {
+//   width: 100%;
+//   height: 100%;
+//   background-color: red;
+//   position: relative;
+//   z-index: 1;
+// }
+
 .container {
   width: 700px;
   max-width: 100%;
   margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 16px;
+  }
 }
 
 .exercise-wrapper {
@@ -99,6 +119,28 @@ code {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/gradient_1.png), url(../images/gradient_2.png);
+    background-position: top -300px right -520px, top -110px left -520px;
+    // background-size: 70% auto, 50% auto;
+    background-repeat: repeat-y, repeat-y;
+    // background-repeat: no-repeat, no-repeat;
+    // filter: opacity();
+    z-index: -1;
+  }
+
+  // background-image: url(../images/color_grad_1.webp), url(../images/color_grad_2.webp);
+}
+
+html[data-theme='dark'] .page-wrapper {
+  &::after {
+    filter: opacity(0.5);
+  }
 }
 
 .main {
@@ -106,12 +148,15 @@ code {
 }
 
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 80px;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  height: 84px;
   width: 100%;
-  background-color: rgb(240, 240, 240);
+  display: flex;
+  align-items: center;
+  // background-color: var(--button-background-color);
+  border-bottom: 1.5px solid rgba(1, 0, 1, 0.05);
 }
 
 .page-body {
@@ -128,7 +173,7 @@ code {
   padding: 20px;
   display: inline-block;
   text-decoration: none;
-  color: #000;
+  color: №000;
   border: 1px solid rgb(229, 232, 235);
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
@@ -146,12 +191,16 @@ code {
 .exerecises-wrapper {
   display: grid;
   gap: 10px;
+
   grid-template-columns: repeat(3, auto);
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, auto);
   }
 }
 
+.exerecise-wrapper {
+  color: var(--text-color);
+}
 .button {
   background-color: #febe46;
   outline: none;

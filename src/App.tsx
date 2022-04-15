@@ -14,6 +14,7 @@ function App() {
   return (
     <div className='page-wrapper'>
       <Header />
+
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='exercise' element={<ExercisePage />}>
@@ -21,7 +22,7 @@ function App() {
         </Route>
       </Routes>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
