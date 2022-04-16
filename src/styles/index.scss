@@ -107,7 +107,7 @@ code {
   margin-bottom: 20px;
 }
 .sentence-item {
-  margin-bottom: 10px;
+  margin-bottom: 32px;
   cursor: pointer;
 }
 
@@ -217,4 +217,9 @@ html[data-theme='dark'] .page-wrapper {
   width: 100%;
   min-height: 100px;
   padding: 12px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
 }

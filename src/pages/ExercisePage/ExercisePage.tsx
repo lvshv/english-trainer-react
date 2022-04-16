@@ -27,7 +27,7 @@ export const ExercisePage = () => {
     return <></>
   }
 
-  const exerciseId = params.exerciseId
+  const exerciseId: string = params.exerciseId
 
   const handlerShowRus = ({ exerciseIdx, idx }: { exerciseIdx: any; idx: any }) => {
     return () => {
@@ -67,10 +67,10 @@ export const ExercisePage = () => {
         <div className='container'>
           {/* {exercises.map((exersice, exerciseIdx) => {
             return ( */}
+          <Link to='/' className='back-link'>
+            <div>Назад</div>
+          </Link>
           <div className='exercise-wrapper'>
-            <Link to='/'>
-              <div>Назад</div>
-            </Link>
             <div className='exercise-title'>Exercise {+exerciseId + 1}.</div>
             <div>
               {exercises[+exerciseId].map((el: ISentence, idx) => {
@@ -110,6 +110,12 @@ export const ExercisePage = () => {
                 отправить овтет
               </Button>
             </div>
+          )}
+
+          {exercises[+exerciseId + 1] && (
+            <Link to={`/exercise/${+exerciseId + 1}`} className='back-link'>
+              <div>Следующее</div>
+            </Link>
           )}
         </div>
       </div>
