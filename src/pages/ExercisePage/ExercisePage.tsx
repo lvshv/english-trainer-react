@@ -31,6 +31,7 @@ export const ExercisePage = () => {
 
   const handlerShowRus = ({ exerciseIdx, idx }: { exerciseIdx: any; idx: any }) => {
     return () => {
+      debugger
       const newState = JSON.parse(JSON.stringify(exercises))
       let sentence = newState[exerciseIdx][idx]
       if (sentence.showEng) {

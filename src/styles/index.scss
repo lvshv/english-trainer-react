@@ -1,65 +1,59 @@
 @import url(./normalize.css);
 @import url(./fonts/fonts.css);
 
-$defaultFont: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-  Droid Sans, Helvetica Neue, sans-serif;
-$secondaryFont: 'Raleway', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-  Droid Sans, Helvetica Neue, sans-serif;
-
+$defaultFont: 'Inter', -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen, ubuntu, cantarell, fira sans,
+  droid sans, helvetica neue, sans-serif;
+$secondaryFont: 'Raleway', -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen, ubuntu, cantarell, fira sans,
+  droid sans, helvetica neue, sans-serif;
 $graySecondary: #b6b6b3;
 
 html[data-theme='dark'] {
-  --button-text-color: #ffffff;
+  --button-text-color: #fff;
   --button-background-color: #4e005c;
   --button-border-color: #ba8fc2;
-
-  --input-text-color: #ffffff;
-  --input-placeholder-text-color: #dddddd;
+  --input-text-color: #fff;
+  --input-placeholder-text-color: #ddd;
   --input-background-color: #7c7c7c;
   --input-border-color: #ba8fc2;
-
   --background-color: #292929;
   --icon-color: #ba8fc2;
-
-  --text-color: #ffffff;
+  --text-color: #fff;
 }
 
 html[data-theme='light'] {
   --button-text-color: #252525;
   --button-background-color: #f9d4ff;
   --button-border-color: #4e005c;
-
   --input-text-color: #252525;
   --input-placeholder-text-color: #a7a7a7;
-  --input-background-color: #ffffff;
+  --input-background-color: #fff;
   --input-border-color: #4e005c;
-
   --background-color: #fff;
   --icon-color: #4e005c;
-
   --text-color: #383636;
 }
 
 body {
+  position: relative;
   margin: 0;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 18px;
   font-family: $defaultFont;
+  font-family: $defaultFont;
+  font-style: normal;
+  background-color: var(--background-color);
+  transition: background-color 0.3s;
+  counter-reset: step;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: $defaultFont;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 18px;
-  color: var(--text-color);
-  background-color: var(--background-color);
-  position: relative;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   font-display: swap;
-  margin: 0;
-  counter-reset: step;
-  overflow-x: hidden;
-  transition: background-color 0.3s;
 }
+
 * {
   box-sizing: border-box;
   outline: 0 !important;
@@ -68,9 +62,9 @@ body {
 body,
 html {
   width: 100%;
-  scroll-behavior: smooth;
-  min-height: 100vh;
   min-width: 375px;
+  min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 code {
@@ -106,6 +100,7 @@ code {
 .exercise-title {
   margin-bottom: 20px;
 }
+
 .sentence-item {
   margin-bottom: 32px;
   cursor: pointer;
@@ -116,22 +111,26 @@ code {
 }
 
 .page-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  position: relative;
+
   &::after {
-    content: '';
     position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: url(../images/gradient_1.png), url(../images/gradient_2.png);
-    background-position: top -300px right -520px, top -110px left -520px;
-    // background-size: 70% auto, 50% auto;
-    background-repeat: repeat-y, repeat-y;
+
     // background-repeat: no-repeat, no-repeat;
     // filter: opacity();
     z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    // background-image: url(../images/gradient_1.png), url(../images/gradient_2.png);
+
+    // background-size: 70% auto, 50% auto;
+    // background-repeat: repeat-y, repeat-y;
+    // background-position: top -300px right -520px, top -110px left -520px;
+    content: '';
   }
 
   // background-image: url(../images/color_grad_1.webp), url(../images/color_grad_2.webp);
@@ -148,15 +147,17 @@ html[data-theme='dark'] .page-wrapper {
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
   // position: fixed;
   // top: 0;
   // left: 0;
   height: 84px;
-  width: 100%;
-  display: flex;
-  align-items: center;
+
   // background-color: var(--button-background-color);
-  border-bottom: 1.5px solid rgba(1, 0, 1, 0.05);
+  border-bottom: 1.5px solid rgb(1 0 1 / 5%);
 }
 
 .page-body {
@@ -166,33 +167,33 @@ html[data-theme='dark'] .page-wrapper {
 
 .footer {
   height: 300px;
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(241 241 241);
 }
 
 .exerecise-card {
-  padding: 20px;
   display: inline-block;
-  text-decoration: none;
-  color: №000;
-  border: 1px solid rgb(229, 232, 235);
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
   display: flex;
   justify-content: center;
+  padding: 20px;
+  color: №000;
+  text-decoration: none;
+  background-color: rgb(255 255 255);
+  border: 1px solid rgb(229 232 235);
+  border-radius: 10px;
   transition: all 0.3s ease 0s;
 
   &:hover {
-    box-shadow: rgb(4 17 29 / 15%) 0px 0px 4px 0px;
-    transition: all 0.3s ease 0s;
     color: #aaa;
+    box-shadow: rgb(4 17 29 / 15%) 0 0 4px 0;
+    transition: all 0.3s ease 0s;
   }
 }
 
 .exerecises-wrapper {
   display: grid;
+  grid-template-columns: repeat(3, auto);
   gap: 10px;
 
-  grid-template-columns: repeat(3, auto);
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, auto);
   }
@@ -201,15 +202,16 @@ html[data-theme='dark'] .page-wrapper {
 .exerecise-wrapper {
   color: var(--text-color);
 }
+
 .button {
-  background-color: #febe46;
-  outline: none;
-  border: none;
-  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px 20px;
   text-transform: uppercase;
+  background-color: #febe46;
+  border: none;
+  outline: none;
   cursor: pointer;
 }
 

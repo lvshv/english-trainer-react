@@ -1,27 +1,23 @@
 import React from 'react'
 import { useTheme } from 'hooks/useTheme'
 
-const menuElements = ['After Effects', 'Premiere Pro', 'Free Projects', 'Motion Graphics', 'Tutorials', 'About']
 export const Header = () => {
   const { theme, setTheme } = useTheme()
 
   const handleThemeClick = () => {
-    if (theme === 'light') {
-      setTheme('dark')
+    if (theme === 'bumblebee') {
+      setTheme('dracula')
       return
     }
-    setTheme('light')
+    setTheme('bumblebee')
   }
 
   return (
-    <header className='header'>
+    <header className='container mx-auto px-4 py-6'>
       <div className='container'>
-        <div className='header-content'>
-          <nav>
-            <ul></ul>
-          </nav>
-          <button onClick={handleThemeClick}>change theme</button>
-        </div>
+        <button className='btn btn-primary btn-sm' onClick={handleThemeClick}>
+          change theme
+        </button>
       </div>
     </header>
   )
