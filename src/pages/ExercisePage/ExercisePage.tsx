@@ -31,7 +31,6 @@ export const ExercisePage = () => {
 
   const handlerShowRus = ({ exerciseIdx, idx }: { exerciseIdx: any; idx: any }) => {
     return () => {
-      debugger
       const newState = JSON.parse(JSON.stringify(exercises))
       let sentence = newState[exerciseIdx][idx]
       if (sentence.showEng) {
@@ -63,63 +62,57 @@ export const ExercisePage = () => {
     setInputValue(e.target.value)
   }
   return (
-    <main className='main'>
-      <div className='page-body'>
-        <div className='container'>
-          {/* {exercises.map((exersice, exerciseIdx) => {
-            return ( */}
-          <Link to='/' className='back-link'>
-            <div>Назад</div>
-          </Link>
-          <div className='exercise-wrapper'>
-            <div className='exercise-title'>Exercise {+exerciseId + 1}.</div>
-            <div>
-              {exercises[+exerciseId].map((el: ISentence, idx) => {
-                return (
-                  <div key={`s-${idx}`} className='sentence-wrapper'>
-                    <div onClick={handlerShowRus({ exerciseIdx: exerciseId, idx })} className='sentence-item'>
-                      {idx + 1}. {el['rus']}
-                    </div>
+    <main className='container mx-auto py-10'>
+      <Link to='/' className='btn btn-link mb-10'>
+        <div>Назад</div>
+      </Link>
+      <div className=''>
+        <div className='text-xl mb-4'>Exercise {+exerciseId + 1}.</div>
+        <div>
+          {exercises[+exerciseId].map((el: ISentence, idx) => {
+            return (
+              <div key={`s-${idx}`} className=''>
+                <div onClick={handlerShowRus({ exerciseIdx: exerciseId, idx })} className='text-lg mb-2 cursor-pointer'>
+                  {idx + 1}. {el['rus']}
+                </div>
 
-                    {el.showEng && (
-                      <div className='sentence-item eng'>
-                        {/* {idx + 1}.  */}
-                        {el['eng']}
-                      </div>
-                    )}
+                {el.showEng && (
+                  <div className='text-lg mb-2'>
+                    {/* {idx + 1}.  */}
+                    {el['eng']}
                   </div>
-                )
-              })}
-            </div>
-            {!translateMode && (
-              <Button className='button' onClick={startTranslate}>
-                начать перевод
-              </Button>
-            )}
-          </div>
-          {translateMode && (
-            <div>
-              <span></span>
-              <div>{exercises[+exerciseId][0].rus}</div>
-              <textarea
-                className='textarea'
-                placeholder='Your translation'
-                value={inputValue}
-                onChange={onChange}
-              ></textarea>
-              <Button className='button' onClick={checkTranslation}>
-                отправить овтет
-              </Button>
-            </div>
-          )}
-
-          {exercises[+exerciseId + 1] && (
-            <Link to={`/exercise/${+exerciseId + 1}`} className='back-link'>
-              <div>Следующее</div>
-            </Link>
-          )}
+                )}
+              </div>
+            )
+          })}
         </div>
+        {!translateMode && (
+          <Button className='btn my-8' onClick={startTranslate}>
+            начать перевод
+          </Button>
+        )}
       </div>
+      {translateMode && (
+        <div>
+          <span></span>
+          <div>{exercises[+exerciseId][0].rus}</div>
+          <textarea
+            className='textarea'
+            placeholder='Your translation'
+            value={inputValue}
+            onChange={onChange}
+          ></textarea>
+          <Button className='button' onClick={checkTranslation}>
+            отправить овтет
+          </Button>
+        </div>
+      )}
+
+      {exercises[+exerciseId + 1] && (
+        <Link to={`/exercise/${+exerciseId + 1}`} className='btn btn-link'>
+          <div>Следующее</div>
+        </Link>
+      )}
     </main>
   )
 }

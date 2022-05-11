@@ -7,12 +7,16 @@ interface Props {}
 
 export const HomePage: React.FC<Props> = () => {
   return (
-    <div className='container mx-auto'>
-      <div className='grid-cols-2'>
+    <div className='container mx-auto py-20'>
+      <div className='grid grid-cols-1 gap-4 md:grid-cols-3 sm:grid-cols-2'>
         {exerciseData.map((exercise, idx) => {
           return (
-            <Link to={`/exercise/${idx}`} className='exerecise-card' key={`exercise-${idx}`}>
-              <div className=''>Exercise {idx + 1}</div>
+            <Link
+              to={`/exercise/${idx}`}
+              className='card  bg-neutral text-neutral-content shadow-lg hover:-translate-y-1 transition-transform py-8'
+              key={`exercise-${idx}`}
+            >
+              <div className='card-body items-center text-center text-lg'>Exercise {idx + 1}</div>
             </Link>
           )
         })}

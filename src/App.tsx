@@ -13,7 +13,7 @@ import LoginPage from 'pages/Login'
 
 function App() {
   return (
-    <div>
+    <div className='flex flex-col justify-between h-screen'>
       <Header />
 
       <Routes>
@@ -24,7 +24,7 @@ function App() {
         <Route path='/login' element={<LoginPage />} />
       </Routes>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
