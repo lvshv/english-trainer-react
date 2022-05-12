@@ -9,7 +9,7 @@ import ExercisePage from 'pages/ExercisePage'
 import HomePage from 'pages/HomePage'
 import produce from 'immer'
 import './App.css'
-import LoginPage from 'pages/Login'
+import UserPage from 'pages/UserPage'
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <Route path='exercise' element={<ExercisePage />}>
           <Route path=':exerciseId' element={<ExercisePage />} />
         </Route>
-        <Route path='/login' element={<LoginPage />} />
+        <Route path='/user' element={<UserPage />} />
       </Routes>
 
       <Footer />
