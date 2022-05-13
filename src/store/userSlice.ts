@@ -76,11 +76,6 @@ export const fetchUser = createAsyncThunk<User, AuthDto>(
         throw new Error('Server Error!')
       }
 
-      setCookie(null, 'token', response.data.access_token, {
-        maxAge: 30 * 24 * 60 * 60,
-        path: '/',
-      })
-
       return response.data
     } catch (error: any) {
       setTimeout(() => {
@@ -99,10 +94,6 @@ export const registerUser = createAsyncThunk<User, RegisterDto>(
       if (response.status !== 200) {
         throw new Error('Server Error!')
       }
-      setCookie(null, 'token', response.data.access_token, {
-        maxAge: 30 * 24 * 60 * 60,
-        path: '/',
-      })
 
       return response.data
     } catch (error: any) {
@@ -123,10 +114,10 @@ export const getMe = createAsyncThunk('user/getMe', async (payload, { rejectWith
 
     return response.data
   } catch (error: any) {
-    setTimeout(() => {
-      dispatch(setUserError(''))
-    }, 5000)
-    return rejectWithValue(error.response.data.message)
+    // setTimeout(() => {
+    //   dispatch(setUserError(''))
+    // }, 5000)
+    // return rejectWithValue(error.response.data.message)
   }
 })
 

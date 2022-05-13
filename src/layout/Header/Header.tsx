@@ -7,12 +7,13 @@ import { useAppSelector } from 'hooks/useAppSelector'
 import { Routes, Route, Link } from 'react-router-dom'
 import { getMe } from 'store/userSlice'
 import { useAppDispatch } from 'hooks/useAppDispatch '
+import cn from 'classnames'
 
 export const Header = () => {
   const { theme, setTheme } = useTheme()
   const dispatch = useAppDispatch()
 
-  const { user, isAuth } = useAppSelector(state => state.user)
+  const { user, isAuth, isLoading } = useAppSelector(state => state.user)
 
   const [isModalOpened, setIsModalOpened] = useState(false)
 
@@ -54,7 +55,14 @@ export const Header = () => {
             {isAuth && <p className='ml-2'>{user?.email}</p>}
           </Link>
         ) : (
-          <button className='btn modal-button btn-accent ' onClick={openLoginModal} type='button' title='login'>
+          <button
+            className={cn('btn modal-button btn-accent', {
+              loading: isLoading,
+            })}
+            onClick={openLoginModal}
+            type='button'
+            title='login'
+          >
             <MdAccountCircle size='20' className='' />
           </button>
         )}
