@@ -10,6 +10,7 @@ import HomePage from 'pages/HomePage'
 import produce from 'immer'
 import './App.css'
 import UserPage from 'pages/UserPage'
+import AdminPage from 'pages/Admin'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path=':exerciseId' element={<ExercisePage />} />
         </Route>
         <Route path='/user' element={<UserPage />} />
+        <Route path='/admin' element={<AdminPage />} />
       </Routes>
 
       <Footer />
